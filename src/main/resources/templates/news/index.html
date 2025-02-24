@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/index :: dynamic(~{::main})}" >
+
+<body>
+	<main>
+	
+	<br>
+	<div class="form-tintuc-main">
+	<div class=form-tintuc>
+	<h2 class="tintuc" style="margin-top: 50px;"><p>Tin tức<p></h2>
+
+
+    <section id="blog" class="  tin" >
+        <img src="/images/tintuc1.jpg" alt="">
+        <div class="border_text">
+            <h2 class="h2">
+                Giày Travis Scott x Fragment x Air Jordan 1 chính hãng giá bao nhiêu?
+            </h2>
+            <p>
+
+                Mặc dù hiện tại vẫn chưa có thông tin nào được công bố nhưng đôi giày Travis Scott 
+                x Fragment x Air Jordan 1 sẽ rất HOT trong thời gian tới...
+                </br>
+                </p>
+                <br>
+                <a th:href="@{/news1/index}"> <button >Đọc thêm</button> </a>
+        </div>
+    </section>
+
+
+    <section id="blog"   class="tin">
+        <img src="/images/tintuc2.jpg" alt="">
+        <div class="border_text">
+            <h2 class="h2">
+                3+ giày Jordan 3 đắt nhất từ trước đến nay
+            </h2>
+            <p >
+                Air Jordan 3 là 1 trong những đôi giày lịch sử của thương hiệu, 
+                đánh dấu sự bùng nổ của MJ trong sự nghiệp bóng rổ. Hãy cùng điểm lại 10+ AJ3 đắt nhất sau</p>
+                <a th:href="@{/news4/index}"><button >Đọc thêm</button></a> 
+                
+        </div>
+    </section>
+
+
+    <section id="blog"  class="tin">
+        <img src="/images/tintuc3.jpg" alt="">
+        <div class="border_text">
+            <h2 class="h2">
+                Giày Air Jordan 11 chính hãng giá bao nhiêu?
+            </h2>
+            <p>
+
+     
+                Giày Air Jordan 11 luôn là dòng cao cấp với những phối màu đẹp nhất. Ruby Store nhận order tất cả các mẫu like auth. Liên hệ ngay.</p>
+                <a th:href="@{/news3/index}"><button >Đọc thêm</button></a> 
+                
+        </div>
+    </section>
+
+
+    <section id="blog"  class="tin">
+        <img  src="/images/giay-sneaker-1-ty-3.jpg" class="up"  alt="">
+        <div class="border_text">
+            <h2 class="h2">
+                Giày 1 tỷ - sneaker chỉ dám mơ, không thể mua
+            </h2>
+            <p>
+
+                Bài viết tổng hợp 4 đôi giày 1 tỷ hoặc hơn sẽ khiến bạn choáng váng vì mức độ đắt giá cũng như hiếm hoi của nó. Click ngay để biết thêm chi tiết.</p>
+                <a th:href="@{/news2/index}"><button >Đọc thêm</button></a> 
+                
+        </div>
+    </section>
+    </div>
+    </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/index :: dynamic(~{::main})}">
+
+<body>
+	<main>
+		<br>
+		<div class="shopping-momo" >
+			<div class="shopping-main">
+				<form th:action="@{/mailer/send}" method="post" th:each="mail:*{mailinfo}" th:object="${order}">
+					<div class="shopping-left">
+						<p id="shopping-name" style="padding-top: 29px; margin-bottom: 20px; color: white;">Đơn Hàng Hết
+							Hạng Sau</p>
+						<span id="dongho">00:00:00</span>
+						<br>
+						<label class="shopping-information">Nhà Cung Cấp</label>
+						<p><img  src="/images/logo_mini.png " alt="logo" style="width: 60px;">Shop MY Shoes
+						</p>
+						<label class="shopping-information">Số Tiền</label>
+						<div class="shopping-momo-note">
+							<span ng-model="totalPrice">{{ getTotalPrice()}}VNĐ</span>
+						</div>
+						<label class="shopping-information" >Thông Tin</label>
+						<div class="shopping-momo-note">
+							<div ng-model="order.fullname" class="checkout-control-momo" id="fullnameId"></div>
+	                  		 <div ng-model="order.phone" class="checkout-control-momo" id="phoneId"></div>
+							<div id="username">[[${#request.remoteUser}]]</div>
+							<div>{{order.createDate | date :'dd-MM-yyyy'}}</div>
+						</div>
+						<label class="shopping-information">Đơn Hàng</label>
+
+						<div class="shopping-momo-note" ng-app="shopping-cart-app" ng-controller="shopping-cart-ctrl">
+							<p>Địa chỉ giao hàng:</p>
+							<p> {{order.address}}</p>
+						</div>
+
+
+					</div>
+					<div class="shopping-right">
+					<div style="width: 100%; float: left; height:110px;">
+						<div style="width: 80%; float: left"><img src="/images/icon-momo.png" alt="" class="shopping-logo"></div>
+						<div style="float: right; width: 20%; height: 80px;">
+						<a th:href="@{/order/checkout}"><img style="width: 30px; float:right; margin-right:20px; margin-top: 20px;" th:src="@{/img/next.png}" src="/static/img/next.png"></a></div>
+						</div>
+						<br>
+						<hr color="Gray">
+						<h4 id="shopping-names">Quét mã để thanh toán</h4>
+						<div class="shopping-form-qr">
+							<img class="shopping-qr" src="/images/QR-momo.webp" alt="">
+						</div>
+						<div class="shopping-form-note">
+							<p>Sử dụng App <strong>MoMo</strong> hoặc
+								<br>
+								ứng dụng camera hỗ trợ QR code để quét mã
+							</p>
+						</div>
+						<!-- 	
+						<div >
+					
+							<a href=""><button ng-click="order.purchase()" type="submit" value="Send"></button></a>
+						</div>
+-->
+						<div class="shopping-botton">
+								<input type="submit" ng-click="order.purchase()" value="Hoàn Tất Thanh Toán"/>
+						</div>
+					</div>
+				</form>
+
+
+			</div>
+		</div>
+	</main>
+
+</body>
+
+</html>

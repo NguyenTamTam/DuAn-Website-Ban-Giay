@@ -1,0 +1,74 @@
+<html lang="en">
+
+<head>
+<script
+	src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+</head>
+
+<body>
+	<main>
+		<div id="custom-alert" class="custom-alert"></div>
+		<div style="margin: 100px;">
+			<div>Tên người gửi</div>
+			<input type="text" id="sendername" value="MyShoes">
+			<div>Người nhận</div>
+			<!--email khach hang-->
+			<input type="email" id="to" ng-model="send.email" readonly>
+			<div>Tiêu Đề</div>
+			<input type="text" id="subject" value="Phản Hồi từ MyShoes">
+			<div>Trả lời</div>
+			<input type="text" id="replyto" value="myshoes9999@gmail.com">
+			<div>Nội dung</div>
+			<input type="text" name="message" id="message"> <br>
+			<button onclick="sendMail();" class="open-table-fb">send</button>
+		</div>
+		<div style="margin-top: 100px;"">
+			<table class=" feedback-table" id="myTable">
+				<thead>
+					<tr>
+						<th class="change-color tr3">Họ Tên</th>
+						<th class="change-color tr3">Email</th>
+						<th class="change-color tr3">Số Điện thoại</th>
+						<th class="change-color tr3">Tên Chủ Đề</th>
+						<th class="change-color tr3">Ghi Chú</th>
+						<th class="change-color tr3">Phản hồi</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr ng-repeat="feedback in pager.feedbacks">
+						<td class="tr3">{{feedback.fullname}}</td>
+						<td class="tr3">{{feedback.email}}</td>
+						<td class="tr3">{{feedback.phone_number}}</td>
+						<td class="tr3">{{feedback.subject_name}}</td>
+						<td class="tr3">{{feedback.note}}</td>
+						<td class="tr3"><a><button ng-click="fb1(feedback)"
+									class="open-table">Phản Hồi</button></a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="text-center naviga">
+			<button ng-click="pager.first()" class="navigation1">
+				<b class='bx bxs-chevrons-left'></b>
+			</button>
+			<button ng-click="pager.prev()" class="navigation1"
+				style="border: none;">
+				<b class='bx bxs-chevron-left'></b>
+			</button>
+			<button class="">{{pager.page + 1}} OF {{pager.count}}</button>
+			<button ng-click="pager.next()" class="navigation1">
+				<b class='bx bxs-chevron-right'></b>
+			</button>
+			<button ng-click="pager.last()" class="navigation1">
+				<b class='bx bxs-chevrons-right'></b>
+			</button>
+		</div>
+
+	</main>
+</body>
+
+</html>

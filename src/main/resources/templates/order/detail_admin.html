@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/index :: dynamic(~{::main})}">
+
+
+<body>
+    <main th:object="${order}">
+        	<div class=" shopping-cart" style="margin-top: -150px;">
+        	<div class=" shopping-shopping">
+        		<div class="shopping-heading"><p>ORDER Lines</p></div>
+        		<table class="shopping-hover">
+        			<thead>
+        				<tr class="shopping-th">
+        					<th>Mã Đơn Hàng</th>    
+        					<th>Mã Sản Phẩm</th>   					
+        					<th>Tên Sản Phẩm </th>
+        					<th>Giá Sản Phẩm</th>
+        					<th>Số Lượng </th>
+        					<th>Tổng Tiền</th>
+        				</tr>
+        			</thead>
+        			<tbody>  
+        				<tr th:each="detail:*{orderDetails}" th:object="${detail}" class="shopping-td">
+        					<td>[[*{order.id}]]</td>
+        					<td>[[*{product.id}]]</td>
+        					<td>[[*{product.name}]]</td>
+        					<td >[[*{#numbers.formatDecimal(price,0,'COMMA',2,'POINT')}]] VNĐ</td>
+        					<td>[[*{#numbers.formatDecimal(quantity,0,'COMMA',2,'POINT')}]]</td>
+        					<td>[[*{#numbers.formatDecimal(price*quantity,0,'COMMA',2,'POINT')}]] VNĐ</td>
+        				</tr>
+        			</tbody>
+        		</table>
+        	</div>
+        	</div>	
+    </main>
+</body>
+
+</html>

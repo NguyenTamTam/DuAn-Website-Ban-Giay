@@ -1,0 +1,81 @@
+<div xmlns:th=http://www.thymeleaf.org>
+	<!--Footer-->
+    <footer class="container-fluid py-5 "
+    style=" background-color: white ; display: flex;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-6 ">
+                        <div class="logo-part">
+                            <img src="/images/logo_max.png" class="w-100 logo-footer"
+                                style="margin-left: -20px;">
+                                <div class="footer-thongtin">
+                                    <p>MYSHOES Trang Thông Tin Chính Thức.</p>
+                                    <a href="" ><p>⛪ Địa chỉ: 192/2 Nguyễn Thái Bình, Phường 12, Quận Tân Bình, Thành phố Hồ Chí Minh</p></a>
+                                    <a href="" ><p>☎️ Hotline Bán Hàng: 0916.857.647 - 0345.303.416 </p></a>
+                                    <a href="" ><p>☎️ Hotline CSKH: 0899.354.900 </p></a>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 px-4">
+                        <h6>HỖ TRỢ KHÁCH HÀNG</h6>
+                        <ul>
+                          <li><a href="#"> Chăm sóc khách hàng</a></li>
+                          <li><a href="#"> Thanh toán</a></li>
+                          <li><a href="#"> Hướng dẫn mua hàng</a></li>
+                      </ul>
+                        <a th:href="@{/cart/gioithieu}" class="btn-footer"> Thông Tin Shop </a><br> <a
+                            th:href="@{/feedback}" class="btn-footer"> Phản Hồi </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-6 px-4">
+                        <h6>CHÍNH SÁCH</h6>
+                        <div class="row ">
+                            <div class="col-md-6">
+                                <ul>
+                                    <li><a href="#"> Chế độ bảo hành</a></li>
+                                    <li><a href="#"> Chính sách đổi hàng</a></li>
+                                    <li><a href="#"> Bảo mật thông tin</a></li>
+                                    <li><a href="#"> Chinh sách giao diện</a></li>
+                                </ul>
+                            </div>
+                            
+                            <h6>CHỨNG NHẬN</h6>
+                            <p style="color: gray;">Số ĐKKD: 41N8041309 cấp ngày 17/8/2018. Nơi cấp Ủy Ban Nhân Dân Quận Tân Bình. Hộ Kinh Doanh: MY SHOES. Hotline: 0909.300.746</p>
+                            
+                            <!--<div class="col-md-6 px-4">
+                                <ul>
+                                    <li><a href="#"> Cab Faciliy</a></li>
+                                    <li><a href="#"> Fax</a></li>
+                                    <li><a href="#"> Terms</a></li>
+                                    <li><a href="#"> Policy</a></li>
+                                    <li><a href="#"> Refunds</a></li>
+                                    <li><a href="#"> Paypal</a></li>
+                                </ul>
+                            </div>-->
+                        </div>
+                    </div>
+                    <div class="col-md-6 ">
+                        <h6>FANPAGE</h6>
+                        <div class="social">
+                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        </div>
+                       
+                        
+                        <!--<video controls style="width: 250px;">
+                          <source src="/image/Video - Facebook.mp4">
+                      </video> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>	
+  
+  <div>[[${message}]]</div>
+  </div>

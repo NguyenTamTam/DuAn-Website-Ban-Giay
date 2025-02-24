@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Shoes</title>
+    <link rel="stylesheet" href="/css/Sign_in.css">
+    <link rel='stylesheet prefetch' href='https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="/images/logo_mini.png"
+	type="image/x-icon">
+   <style type="text/css">
+
+.catch{
+	margin-left:50px;
+}
+   
+   </style>
+</head>
+<body id="body"> 
+	<div  class="messge" th:if="${message}">
+	<i id="message1" th:text="${message}" class="showarlet-error"></i> 
+	</div>
+    <div class="container" id="container">
+    
+        <div class="form-container sign-up-container">
+        	<a th:href="@{/}"><img class="img-form-right" th:src="@{/img/next.png}" src="/static/img/next.png"></a>
+            <!-- Sign Up form code goes here -->
+            <form action="/register" method="post" onsubmit="return validateForm()" id="signupForm">
+                <h2>Tạo Tài Khoản</h2>
+                <input type="text" name="username" placeholder="Tên Tài Khoản" autocomplete="username"/>
+                <input type="text" name="fullname" placeholder="Họ và Tên" />
+                <input type="text" name="phone" placeholder="Số Điện Thoại" />
+                <input type="email" name="email" placeholder="Email" autocomplete="email"/>
+                <input type="password" name="password" placeholder="Mật Khẩu" autocomplete="current-password" />
+                <button class="tran-mess1" style="background-color: rgb(151, 29, 29);">Đăng ký</button>
+                
+            </form>
+        </div>
+        <div class="form-container sign-in-container" >
+       <a th:href="@{/}"><img class="img-form-left" th:src="@{/img/reply.png}" src="/static/img/reply.png"></a>
+            <!-- Sign In form code goes here -->
+            <form th:action="@{/security/login}" method="post" >
+              
+                <h2>Đăng nhập</h2>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fa fa-facebook"></i></a>
+                    <a href="#" class="social"><i class="fa fa-google"></i></a>
+                   
+                </div>
+                <input class="form-control" id="floatingInput" name="username" placeholder="Tên Tài Khoản" autocomplete="username"> <label for="floatingInput"></label>
+               <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Mật Khẩu" autocomplete="current-password">
+				<label for="floatingPassword"></label>
+									
+             
+                	<div class="d-grid">
+									
+									<button
+										class="btn btn-primary btn-login text-uppercase fw-bold  btn btn-success tran-mess2"
+										type="submit"
+style="background-color: black; border: 1px black; " >Đăng nhập</button>
+										
+					</div>
+            </form>
+             
+        </div>
+        <div class="overlay-container">
+            <!-- The overlay code goes here -->
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1></h1>
+                    <!--<p>To keep connected with us please login with your personal info</p>-->
+                    <button class="ghost" id="signIn" style="background-color: rgb(151, 29, 29);">Đăng nhập</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1></h1>
+                    <!--<p>Enter your personal details and start journey with us</p>-->
+                    <button class="ghost" id="signUp" style="background-color: #4087f1;">Đăng ký</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/javascrips/Sign_in.js"></script>
+</body>
+</html>

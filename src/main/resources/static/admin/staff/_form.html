@@ -1,0 +1,52 @@
+<main>
+	<div id="custom-alert" class="custom-alert"></div>
+	<div class="panel-heading" style="background-color: black; color: white;">Chỉnh Sửa Nhân
+		Viên</div>
+	<div class="form-staff">
+		<div class="import-staff">
+			<div class="bao-staff">
+				<div class="username-left">
+					<label for="">Tên Tài Khoản</label><br>
+					<input ng-model="to.username" class="form-control" >
+				</div>
+				<div class="password-right">
+					<label for="">Mật Khẩu</label><br>
+					<input ng-model="to.password" class="form-control"><br>
+				</div>
+			</div>
+			
+				<div class="FAEP-staff">
+					<label for="">Họ và Tên</label><br>
+					<input ng-model="to.fullname" class="form-control"><br>
+				
+				
+					<label for="">Địa Chỉ</label><br>
+					<input ng-model="to.address" class="form-control"><br>
+			
+				
+					<label for="">Email</label><br>
+					<input type="email" ng-model="to.email" class="form-control"><br>
+			
+				
+					<label for="">Số Điện Thoại</label><br>
+					<input type="tel" ng-model="to.phone" class="form-control"><br>
+				</div>
+				
+		
+			<div class="panel-footer text-center editor">
+				<button ng-click="createStaf()" class="btn ">
+					<b class="glyphicon glyphicon-plus"></b>Tạo Mới
+				</button>
+				<button  type="button" ng-click="updateStaf()" class="btn ">
+					<b class="glyphicon glyphicon-save"></b>Cập Nhật
+				</button>
+				<button ng-click="deleteStaf()" class="btn ">
+					<b class="glyphicon glyphicon-trash"></b>Xóa
+				</button>
+				<button ng-click="resetStaf()" class="btn ">
+					<b class="glyphicon glyphicon-refresh"></b>Cài lại
+				</button>
+			</div>
+		</div>
+	</div>
+</main>

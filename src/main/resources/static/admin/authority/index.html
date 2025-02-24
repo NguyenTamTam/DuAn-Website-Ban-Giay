@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>AUTHORITY</title>
+    <style>
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.AUTHOR {
+	padding: 100px 3%;
+}
+
+table th, table td {
+	border:1px solid #000;
+  padding: 8px;
+  text-align: center;
+  font-size:1.5rem;
+}
+
+.name12 {
+  background-color: black ;
+  color: white; 
+}
+
+
+    </style>
+</head>
+<body>
+	<div id="custom-alert" class="custom-alert"></div>
+    <div class="AUTHOR" >
+        <div > <h2>Phê Duyệt Quyền Hạn</h2></div>
+        <table>
+            <thead class="bg-success" >
+                <tr class="name12">
+                    <th>Tên Tài Khoản</th>
+                    <th ng-repeat="role in roles" class="text-center">{{role.name}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="acc in admins">
+                    <td>{{acc.username}}</td>
+                    <th ng-repeat="role in roles" class="text-center">
+                        <input ng-checked="authority_of(acc,role)" ng-click="authority_changed(acc,role)" type="checkbox">
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

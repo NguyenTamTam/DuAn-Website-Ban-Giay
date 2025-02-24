@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{layout/index :: dynamic(~{::main})}">
+<body>
+	<main style="background-color:#fff8f8;">
+		
+	<div th:replace="/layout/search.html" ></div>
+	<article >
+		<div th:replace="/layout/_sidebar.html"></div>
+	</article>
+	<aside>
+		<div class="product" id="product-list" >
+			
+			<div class="product-box image" th:each="p:${items}" var="item" items="${items}" style="position: relative;">
+				 <div th:if="${p.pricesale < p.price && p.pricesale > 0}" class="discount-percentage" style="position: absolute; background-color: black; color: #FFD700;">
+            
+            <span th:text="${((p.price - p.pricesale) / p.price) * 100} + '%'"> </span>
+           <!--  {{(((parseFloat(p.price) - parseFloat(p.pricesale)) / parseFloat(p.price)) * 100).toFixed(2)}}% --> 
+        </div>
+				<a th:href="@{|/product/detail/${p.id}|}"> <img class="item"
+					th:src="@{|/images/${p.image}|}">
+				</a>
+				
+				<div class="product-name">
+					<p class="name" th:utext="${p.name}"></p>
+				</div>
+				
+				<div class="product-full-content">
+				<div class="product-reviews">
+					<div class="stars">
+						<form action="">
+							<input class="star star-5" id="star-5" type="radio" name="star" />
+							<label class="star star-5" for="star-5"></label> <input
+								class="star star-4" id="star-4" type="radio" name="star" /> <label
+								class="star star-4" for="star-4"></label> <input
+								class="star star-3" id="star-3" type="radio" name="star" /> <label
+								class="star star-3" for="star-3"></label> <input
+								class="star star-2" id="star-2" type="radio" name="star" /> <label
+								class="star star-2" for="star-2"></label> <input
+								class="star star-1" id="star-1" type="radio" name="star" /> <label
+								class="star star-1" for="star-1"></label>
+						</form>
+					</div>
+				</div>
+				
+				<div class="product-price">
+						<div th:if="${p.available}">
+							<div th:if="${p.pricesale < p.price && p.pricesale > 0}"
+								class="price-sale">
+								Giá: <span class="car-price" id="cart-price"
+									style="text-decoration: line-through; color: gray; font-size: 12px;">[[${p.price}]]
+									VNĐ </span> <span class="car-price-sale" id="price-sale">[[${p.pricesale}]]
+									VNĐ</span>
+							</div>
+							<div th:unless="${p.pricesale < p.price && p.pricesale > 0}">
+								<div>
+									Giá: <span class="car-price" id="cart-price">[[${p.price}]]
+										VNĐ </span>
+								</div>
+							</div>
+						</div>
+						<div th:unless="${p.available}">
+							<span>Hết Hàng</span>
+						</div>
+					</div>
+
+					<div class="product-button">
+					<button th:if="${p.available}" class="button-cart"
+						th:attr="ng-click=@{|cart.add(${p.id})|}">
+						<i class='bx bx-cart-download glyphicon glyphicon-shopping-cart' id="icon icon-cart"></i>
+					</button>
+					<button th:unless="${p.available}" class="button-cart"
+						th:attr="ng-click=@{|cart.add(${p.id})|}" disabled  style="color: black;">
+						<i class='bx bx-cart-download glyphicon glyphicon-shopping-cart' id="icon icon-cart"></i>
+					</button>
+				</div>
+				</div>
+			</div>
+		</div>
+		<br>
+		<!--<div class="pagination">
+			<a href="#" class="active" onclick="changePage(1)">1</a> <a href="#"
+				onclick="changePage(2)">2</a> <a href="#" onclick="changePage(3)">3</a>
+			<a href="#" onclick="changePage(4)">4</a>
+			
+		</div>-->
+		<div id="pagination">
+        <ul id="page-numbers"></ul>
+     </div>
+     </aside>
+	</main>
+	
+</body>
+
+</html>

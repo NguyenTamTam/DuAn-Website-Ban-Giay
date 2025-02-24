@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+        <main >
+
+			<div id="custom-alert" class="custom-alert"></div>
+        
+            <div class="Customer-Management-box ">
+                <div class="infoForm-mangement-box">
+                <h2>Kiểm soát tài khoản khách hàng</h2>
+                <div class="infoForm-inhit">
+          <form id="infoForm-mangement">
+    <div class="cust-mangement-title">
+        <label for="selectedUsername">Tên Tài Khoản</label>
+        <input type="text" id="selectedUsername" name="selectedUsername" ng-model="selectedCustomer.username"  required>
+    </div>
+
+    <div class="cust-mangement-title">
+        <label for="selectedFullName">Họ và Tên</label>
+        <input type="text" id="selectedFullName" name="selectedFullName" ng-model="selectedCustomer.fullname" required>
+    </div>
+    
+    <div class="cust-mangement-title">
+        <label for="selectedPassword">Mật Khẩu</label>
+        <input type="text" id="selectedPassword" name="selectedPassword" ng-model="selectedCustomer.password" required>
+    </div>
+
+    <div class="cust-mangement-title">
+        <label for="selectedAddress">Địa chỉ</label>
+        <input type="text" id="selectedAddress" name="selectedAddress" ng-model="selectedCustomer.address" required>
+    </div>
+
+    <div class="cust-mangement-title">
+        <label for="selectedEmail">Email</label>
+        <input type="email" id="selectedEmail" name="selectedEmail" ng-model="selectedCustomer.email" required>
+    </div>
+
+    <div class="cust-mangement-title">
+        <label for="selectedPhone">Số điện thoại</label>
+        <input type="tel" id="selectedPhone" name="selectedPhone" ng-model="selectedCustomer.phone" required>
+    </div>
+</form>
+                </div>
+      <div class="button-container-cust">
+    <button type="submit" ng-click="createCustomer()">Tạo mới</button>
+    <button type="button" ng-click="updateCustomer()">Cập nhật</button>
+    <button type="button" ng-click="deleteCustomer()">Xóa</button>
+    <button type="button" ng-click="resetForm()">Cài lại</button>
+</div>
+            </div>
+           <div id="custom-management-box" class="custom-management-box">
+        <h2>Danh sách khách hàng</h2>
+        <table class="custom-management-table">
+            <thead>
+                <tr>
+                    <th>Tên Tài Khoản</th>
+                    <th>Họ và Tên</th>
+                    <th>Mật Khẩu</th>
+                    <th>Địa chỉ</th>
+                    <th>Email</th>
+                    <th>Số điện thoại</th>
+                    <th>Cập Nhật</th>
+                </tr>
+            </thead>
+            <tbody id="myTable">
+                <tr ng-repeat="custom in paginatedStafs()" >
+                    <td>{{ custom.username }}</td>
+                    <td>{{ custom.fullname }}</td>
+                    <td>{{ custom.password }}</td>
+                    <td>{{ custom.address }}</td>
+                    <td>{{ custom.email }}</td>
+                    <td>{{ custom.phone }}</td>
+                    <td>
+                        <div class="edit1-cust-management">
+                            <button class='bx bx-edit-alt' ng-click="editCustomer(custom)"></button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+     	
+	<div class="custumnaviga naviga">
+					<ul class="pagination">
+						<li ng-class="{ 'disabled': currentPage == 1 }"><a
+							ng-click="setPage(1)" aria-label="First"> <span
+								aria-hidden="true" class='bx bxs-chevrons-left'></span>
+						</a></li>
+						<li ng-class="{ 'disabled': currentPage == 1 }"><a
+							ng-click="setPage(currentPage - 1)" aria-label="Previous"> <span
+								aria-hidden="true" class='bx bxs-chevron-left'></span>
+						</a></li>
+
+						<li ng-class="{ 'disabled': currentPage == pageCount() }"><a
+							ng-click="setPage(currentPage + 1)" aria-label="Next"> <span
+								aria-hidden="true" class='bx bxs-chevron-right'></span>
+						</a></li>
+						<li ng-class="{ 'disabled': currentPage == pageCount() }"><a
+							ng-click="setPage(pageCount())" aria-label="Last"> <span
+								aria-hidden="true" class='bx bxs-chevrons-right'></span>
+						</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<section></section>
+
+
+		
+		
+        </main>
+
+	<script src="./Customer-Management/Customer-ctrl.js"></script>
+	
+
+</html>

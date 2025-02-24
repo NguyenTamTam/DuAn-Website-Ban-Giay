@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <main>
+        <section class="searchID" style="margin-top: 100px;">
+            <div class="ps-container">
+                <div class="clearfix">
+                    <form method="post" th:action="@{/product/search/price}">
+                        <input type="hidden" name="cid" value="11">
+                        <div class="" role="toolbar">
+                            
+                            
+                           <div class=" select-price">
+                      <div class="">
+                        <label class="label-search">Khoảng giá</label>
+                        <select class="" name="price_range" data-select2-id="7" tabindex="-1" style="" aria-hidden="true">
+                          <option value="" data-select2-id="9">Tất cả</option>
+                      		
+                          <option value="0-3000000.0">Dưới 3 Triệu</option>
+                          <option value="3000000.0-5000000.0">Từ 3 đến 5 Triệu</option>
+                          <option value="5000000-10000000">Từ 5 đến 10 Triệu</option>
+                          <option value="10000000-15000000">Từ 10 đến 15 Triệu</option>
+                          <option value="15000000-0"> Trên 15 Triệu</option>
+                        </select><span class="select2-selection__rendered" id="select-price-select" >Tất Cả</span>
+  </div>
+    
+                    </div> <div class="select-price">
+                                <div class="">
+                                    <label class="label-search">Sắp xếp theo</label>
+                                    <select class="" name="sort" id="sort-select" data-select2-id="10" tabindex="-1" style="" aria-hidden="true">
+                                        <option  value="giaban_tc">Giá thấp đến cao</option>
+                                        <option  value="giaban_ct">Giá cao đến thấp</option>
+                                        <option  value="name_az">Tên A - Z</option>
+                                        <option  value="name_za">Tên Z - A</option>
+                                    </select><span class="elect2 select2-container select2-container--default" dir="ltr" data-select2-id="11" style="width: auto;"><span class="selection"><span  role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-sort-lo-container"><span class="select2-selection__rendered" id="select2-sort-lo-container" role="textbox" aria-readonly="true" title="Giá thấp đến cao">Giá thấp đến cao</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                </div>
+                            </div>
+
+                            <div class="btn-search-lock">
+                                <button class="btn-search" type="submit" title="Search">Tìm Giày Ngay <i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

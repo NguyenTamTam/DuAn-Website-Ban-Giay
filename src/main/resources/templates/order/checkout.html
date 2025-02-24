@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/index :: dynamic(~{::main})}">
+
+<body>
+    <main>
+    	<div th:replace="~{/cart/view :: shopping-cart}" ></div>
+          <div class="checkout-panel" style=" margin-top: 0px" >
+          <div class="checkout-check">
+            <div class="checkout-heading"><p>THANH TOÁN ĐƠN HÀNG<p></div>
+            <div class="checkout-body">
+              <div class="row row-top" >
+              
+                <div class="checkout-group">
+	                  <div>Họ và Tên:</div>
+	                  <div    th:each="account, state: ${accounts}">
+	                  <div class="checkout-control" ng-model="order.fullname" id="fullname">[[${account.fullname}]]</div>
+	                  </div>
+	                 
+	               
+</div>	
+                
+                <div class="checkout-group" id="result">
+                  <div>Số Điện Thoại:</div>
+                  <div  th:each="account, state: ${accounts}">
+                  <div ng-model="order.phone" class="checkout-control" id="phone">[[${account.phone}]]</div>
+                  </div>
+                </div>
+                
+                <div class="checkout-group">
+                  <div>Chủ Mua Hàng:</div>
+                  <div class="checkout-control" id="username">[[${#request.remoteUser}]]</div>
+                  
+                </div>
+                
+                <div class="checkout-group">
+                  <div>Ngày Đặt Hàng</div>
+                  <div class="checkout-control">{{order.createDate | date :'dd-MM-yyyy'}}</div>
+                </div>
+              </div>
+              <div class="checkout-row">
+                <div class="checkout-group checkout-form">
+                  <div class="">Địa Chỉ Giao Hàng</div>
+                  <textarea ng-model="order.address" class="checkout-control" ></textarea>
+                </div>
+              </div>
+	        	<form class="checkout-group" id="myForm"  >
+	        		<div class="checkout-form" id="myForm">
+	        			
+				          <input type="radio" name="gender" value="nganhang">
+				        <label for="nganhang"> Ngân Hàng</label><img src="/img/icon-vnpay.webp" style="width: 50px ; margin-left: 10px;">
+	        		</div>
+	        		<div class="checkout-form" id="myForm">
+	        			
+				          <input type="radio" name="gender" value="momo">
+				        <label for="momo"> MoMo</label> <img src="/images/icon-momo.png" style="width: 50px; margin-left: 20px;">
+	        		</div>
+	        		<div class="checkout-form" id="myForm">
+	        			
+				          <input type="radio" name="gender" value="nhanhang">
+				        <label for="nhanhang"> Khi Nhận Hàng</label>
+	        		</div>
+	        		<div class="checkout-footer">
+                <button  class="checkout-thanhtoan" id="tickButton" type="submit" ng-click="order.redirectToPage()">Thanh Toán</button>
+              </div>
+	        	</form>
+            </div>
+          </div>
+          </div>
+    </main>
+</body>
+
+</html>

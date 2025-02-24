@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/index :: dynamic(~{::main})}">
+ 
+<body>
+    <main th:object="${item}">
+    <br>
+   <div class="pd-box">
+        <h1>Chi Tiết Sản Phẩm </h1>
+        <div class="pd-left">
+            <div class="zoom-image" onmousemove="zoom(event)">
+                <img th:src="@{|/images/*{image}|}"  id="zoomed-image">
+            </div>
+        </div>
+
+        <div class="pd-right">
+            <div class="pd-title-box">
+                <div class="pd-title">
+                    <h3>[[${item.name}]]</h3>
+                    <p>Thương hiệu: <span class="brand-shoes">[[${item.category.name}]]</span></p>
+                    <div th:if="${item.pricesale < item.price && item.pricesale > 0}">
+                    <p>Giá: <span style="text-decoration: line-through; color: gray;">[[${item.price}]]</span> VND</p>
+                    <p>Giá giảm: <span style="color: red;">[[${item.pricesale}]]</span> VND</p>
+                    </div>
+                    <div th:unless="${item.pricesale < item.price && item.pricesale > 0}">
+                    <p>Giá: <span>[[${item.price}]]</span> VND</p>
+                    <p>Sản phẩm không nằm trong sự kiện giảm giá</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="pd-buy">
+                    <p th:if="${item.available}">Trạng thái: <span>Còn Hàng</span></p>
+                    <p th:unless="${item.available}">Trạng thái: <span>Hết Hàng</span></p>
+                    <p>Tình trạng: <span>Hàng mới 100%</span></p>
+                    <p>Ngày bày bán: <span>[[${item.createDate}]]</span></p>
+                    <p>Hotline: 0916.857.647 - 0345.303.416 </p>
+                    <button th:attr="ng-click=@{|cart.add(*{id})|}" th:if="${item.available}">
+                        <div>
+                            <span>
+                                <p>Mua Hàng</p>
+                            </span>
+                        </div>
+                        <div>
+                            <span>
+                                <p>Nhấp Để Chọn </p>
+                            </span>
+                        </div>
+                    </button>
+                     <button th:attr="ng-click=@{|cart.add(*{id})|}" th:unless="${item.available}" disabled="disabled">
+                        <div>
+                            <span>
+                                <p>Sản Phẩm Hết Hàng</p>
+                            </span>
+                        </div>
+                        <div>
+                            <span>
+                                <p>Vui Lòng Chọn Sản Phẩm Khác </p>
+                            </span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="Notification-box">
+                <div class="Notification">
+                    <i class='bx bxs-store'></i>
+                    <div class="Notification-title">
+<h4>My Shoes</h4>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                    </div>
+                    <p class="shield"> <i class='bx bxs-check-shield'></i>Cửa hàng đảm bảo</p>
+                </div>
+                <hr>
+                <p class="Statement"><i class='bx bxs-badge-check'></i>Miễn phí đổi trả trong 7 ngày</p>
+                <hr>
+                <p class="Statement"><i class='bx bxs-badge-check'></i>Kiểm tra hàng trước khi nhận</p>
+                <hr>
+                <p class="Statement"><i class='bx bxs-badge-check'></i>Hoàn Tiền nếu phát hiện hàng giả</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <br>
+		<div class="product-detail-heading">
+			<p>Hàng cùng loại</p>
+		</div>
+		<div class="product-detail-main  ">
+
+				<div th:each="p:*{category.products}" class="product-detail-sp image">
+
+					<div class="product-detail-pannel">
+						<div>
+							<a th:href="@{|/product/detail/${p.id}|}"><img class="item"
+								th:src="@{|/images/${p.image}|}"></a>
+						</div>
+						<div class="product-detail-name">
+							<span th:text="${p.name}"></span>
+						</div><div class="product-price">
+						<div th:if="${p.available}">
+							<div th:if="${p.pricesale < p.price && p.pricesale > 0}"
+								class="price1sale">
+								Giá: <span class="car-price" id="cart-price"
+									style="text-decoration: line-through; color: gray; font-size: 12px;">[[${p.price}]]
+									VNĐ </span> <span class="car-price-sale" id="pricesale">[[${p.pricesale}]]
+									VNĐ</span>
+							</div>
+							<div th:unless="${p.pricesale < p.price && p.pricesale > 0}">
+								<div>
+									Giá: <span class="car-price" id="cart-price">[[${p.price}]]
+										VNĐ </span>
+								</div>
+							</div>
+						</div>
+						<div th:unless="${p.available}">
+							<span>Hết Hàng</span>
+						</div>
+					</div>
+						
+					</div>
+				</div>
+			</div>
+
+		<div id="pagination">
+        <ul id="page-numbers"></ul>
+     </div>
+	</main>
+</body>
+</html>

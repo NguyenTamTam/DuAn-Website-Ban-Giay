@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="dynamic(main)">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1,maximum-scale=1">
+<title>ADMIN</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+<link rel="stylesheet"
+	href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/admin.css">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+	rel='stylesheet'>
+
+
+</head>
+
+<body ng-app="admin-app">
+
+	<input type="checkbox" id="nav-toggle" >
+
+	<div class="sidebar">
+		<div class="sidebar-brand">
+			<label for="">
+				<h2>
+					<a href=" /"><span class="fa fa-audio-description test1">
+					</span> <span class="test">MyShoes</span> </a>
+				</h2>
+			</label>
+		</div>
+
+		<div class="sidebar-menu">
+			<ul>
+				
+				<li id="s1"><a href=" #!product "><span class='bx bx-detail'></span><span> Quản Lý Sản Phẩm</span></a></li>
+				
+				<li id="s1"><a href=" #!staf "><span class='bx bx-group'></span><span> Quản Lý Nhân Viên</span></a></li>
+				
+				<li id="s1"><a href=" #!customer-management "><span class='bx bxs-user-account'></span><span> Quản Lý Khách Hàng</span></a></li>
+				
+				<li id="s1"><a href=" #!order-management"><span class='bx bxs-package'></span><span> Quản Lý Đơn Hàng</span></a></li>
+				<li id="s1"><a href=" #!feedback "><span class='bx bx-bell'></span><span> Phản Hồi</span></a></li>
+								
+				<li id="s1"><a href=" #!authorize "><span class=" fa fa-gears"></span><span> Phê Duyệt</span></a></li>
+				
+				<li id="s1"><a href=" /security/logoff "><span class="fa fa-share-square-o "></span><span> Đăng Xuất</span></a></li>
+
+			</ul>
+		</div>
+	</div>
+	<div class="main-content">
+		<header>
+			<h2>
+				<label for="nav-toggle"> <span class="las la-bars"></span>
+				</label> Trang Quản Lý
+			</h2>
+
+			<div class="user-wrapper">
+				<img src="/images/admin.jpg" width="60px" height="60px" alt="">
+				<div></div>
+			</div>
+		</header>
+		<main ng-view>
+		</main>
+
+	</div>
+	<script src="admin-app.js"></script>
+	<script src="./product/product-ctrl.js"></script>
+	<script src="./staff/staff-ctrl.js"></script>
+	<script src="./authority/authority-ctrl.js"></script>
+	<script src="./Order-Management/order-management-ctrl.js"></script>
+	<script src="./Customer-Management/Customer-ctrl.js"></script>
+	<script src="./Order-Management/order-management.js"></script>
+	<script src="./feedback/feedback-ctrl.js"></script>
+	<script src="./feedback/feedback.js"></script>
+</body>
+
+</html>

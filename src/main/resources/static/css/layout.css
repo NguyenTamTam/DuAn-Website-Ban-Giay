@@ -1,0 +1,231 @@
+/*Feed back*/
+* {
+    box-sizing: border-box;
+}
+
+
+
+.controller-feedback {
+	
+	width: 100%;
+	margin-top: 50px;
+}
+.feedback {
+    max-width: 800px;
+    margin:  0 auto;
+    padding: 20px;
+}
+
+.form input,
+.form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+.bao{
+    display: flex;
+    width: 800px; 
+
+}
+
+.form p,
+.bao div p{
+    margin-left: 20px;
+}
+.username-left{
+    width: 50%;
+    float: left;
+}
+.sdt-right {
+    width: 48%;
+    float: right;
+    margin-left: 5px;
+
+}
+.sdt-right input , .username-left input {
+    border-radius: 20px;
+    border: 1px solid black;
+    width: 350px; 
+    height: 40px;
+    padding: 10px;
+}
+.textarea {
+    height: 150px;
+}
+
+.form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form button:hover {
+    background-color: #555;
+}
+
+.h2{
+    text-align: center;
+}
+
+/* banner */
+#int {
+    margin-top: 30px;
+    width: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    background-position: center;
+}
+
+#in-banner {
+    height: 200px;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+   	align-items:center;
+    justify-content: center;
+}
+
+#in-banner h4 {
+    padding-bottom: 15px;
+}
+
+#in-banner h1 {
+    color: skyblue;
+}
+
+#in-banner button {
+    background-image: url("img/button3.png");
+    background-color: transparent;
+    background-size: 194px 55px;
+    color: #fff;
+    border: 0;
+    padding: 20px 80px 14px 65px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 15px;
+    transition: 0.25s;
+}
+
+#in-banner button:hover {
+    color: #11141d;
+    transform: scale(0.9);
+}
+
+/* section quang cao*/
+.mb-4, .my-4 {
+    margin-bottom: 1.5rem!important;
+}
+@media (min-width: 992px) {}
+.col-lg-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+} 
+.pb-20 {
+    padding-bottom: 20px;
+}
+.pt-40 {
+    padding-top: 40px;
+}
+.bg--cover {
+    background-position: 50% 50% !important;
+    background-size: cover !important;
+}
+.ps-features {
+    background-color: #f0f0f0;
+}
+
+.ps-iconbox {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 900px;
+    padding: 100px;
+}
+
+.ps-iconbox__header h3 {
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 700;
+    color: #FFB6C1;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+.ps-section__title {
+    position: relative;
+    z-index: 10;
+    min-width: 50%;
+    display: block;
+    font-weight: 700;
+    color: #1d1d1d;
+    line-height: 100px;
+    text-transform: uppercase;
+    margin-top: 0;
+    cursor: default;
+}
+h3 {
+    font-size: 22px;
+}
+.ps-section__title:before {
+    content: attr(data-mask);
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 20px;
+    z-index: -1;
+    font-weight: 700;
+    font-size: 90px;
+    line-height: 1em;
+    color: #f4f4f4;
+    letter-spacing: .08em;
+    cursor: default;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+.ps-section__title a {
+    font-size: 30px;
+    margin-left: 25px;
+}
+
+/*search price*/
+.select-price #input-price, .select-pricce select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#input-price {
+    word-wrap: normal;
+}
+button, #input-price {
+    text-transform: none;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 100%;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    width: 20px;
+}

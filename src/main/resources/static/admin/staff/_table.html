@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Staff</title>
+
+</head>
+<body>
+	<main>
+		<div>
+
+			<div class="table-staff">
+				<table class="staff-list-edit">
+					<thead>
+						<tr>
+							<th>Tên Tài Khoản</th>
+							<th>Mật Khẩu</th>
+							<th>Họ và Tên</th>
+							<th>Địa Chỉ</th>
+							<th>Email</th>
+							<th>Số Điện Thoại</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="item in paginatedStafs()">
+							<td>{{item.username}}</td>
+							<td>{{item.password}}</td>
+							<td>{{item.fullname}}</td>
+							<td>{{item.address}}</td>
+							<td>{{item.email}}</td>
+							<td>{{item.phone}}</td>
+							<td class="exper0">
+								<div class="exper">
+									<button ng-click="editStaf(item)" class="las la-wrench"></button>
+								</div>
+							</td>
+						</tr>
+
+					</tbody>
+
+				</table>
+				<div class="text-center naviga">
+					<ul class="pagination">
+						<li ng-class="{ 'disabled': currentPage == 1 }"><a
+							ng-click="setPage(1)" aria-label="First"> <span
+								aria-hidden="true" class='bx bxs-chevrons-left'></span>
+						</a></li>
+						<li ng-class="{ 'disabled': currentPage == 1 }"><a
+							ng-click="setPage(currentPage - 1)" aria-label="Previous"> <span
+								aria-hidden="true" class='bx bxs-chevron-left'></span>
+						</a></li>
+						<li ng-class="{ 'disabled': currentPage == pageCount() }"><a
+							ng-click="setPage(currentPage + 1)" aria-label="Next"> <span
+								aria-hidden="true" class='bx bxs-chevron-right'></span>
+						</a></li>
+						<li ng-class="{ 'disabled': currentPage == pageCount() }"><a
+							ng-click="setPage(pageCount())" aria-label="Last"> <span
+								aria-hidden="true" class='bx bxs-chevrons-right'></span>
+						</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<section></section>
+
+
+
+	</main>
+</body>
+</html>
+

@@ -1,0 +1,18 @@
+
+
+<ul class="nav nav-tabs" >
+    <li class="active"><a data-toggle="tab" href="" data-target="#edit" style="text-decoration: none; color:black ; padding-bottom: 15px;margin-top: 100px">Chỉnh Sửa </a></li>
+    <li ><a data-toggle="tab" data-target="#list" href="" style="text-decoration: none; color:black ;margin-top: 102px;"> Danh Sách</a></li>
+
+</ul>
+
+<div class="tab-content" style="height: 100%; background-color: #f1f5f9;">
+    
+    <div id="edit" class="tab-pane fade in active">
+        <div ng-include="'/admin/product/_form.html'"></div>
+    </div>
+    <div id="list" class="tab-pane fade ">
+        <div ng-include="'/admin/product/_table.html'"></div>
+    </div>
+
+</div>

@@ -1,0 +1,12 @@
+<div xmlns:th=http://www.thymeleaf.org>
+	<h2>Send Email Success</h2>
+	<ul  th:object="${mail}">
+		<li>From: [[${mail.from}]]</li>
+		<li>To: [[${mail.to}]]</li>
+		<li>Subject: [[${mail.subject}]]</li>
+		<li>Body: [[${mail.body}]]</li>
+		<li>cc: [[${mail.cc}]]</li>
+
+	</ul>
+
+</div>

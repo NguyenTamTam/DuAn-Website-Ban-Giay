@@ -1,0 +1,57 @@
+<div xmlns:th=http://www.thymeleaf.org>
+
+	  <header>
+	  <div class="header-img">
+       <a th:href="@{/}"><img class="logo" src="/img/logo_max.png "  alt="logo" style="width: 160px; "></a>
+       </div>
+        <nav>
+            <ul class="nav_links">
+                <li><a class="a" th:href="@{/news/index}">Tin Tức</a></li>
+                <li><a class=" a" th:href="@{/cart/gioithieu}">Giới Thiệu</a></li>
+                <li><a class="a" th:href="@{/product/list}">Sản Phẩm</a></li>
+                <li><a class="a" th:href="@{/feedback}">Phản Hồi</a></li>
+                <li><a class="a" th:href="@{/product/listsale}">Giảm Giá</a></li>
+       		</ul>
+        </nav>
+        <div class="search-box">
+            <form th:action="@{/product/search}">
+                <input type="text" name="key" id="srch" placeholder="Nhập từ cần tìm">
+                <button  type="submit" title="Search"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        
+
+        
+        <a th:href="@{/cart/view}" class="nav-shopping"><button class=""><img src="/img/shop.png" alt="" style="width: 55px; height: 55px;"></button><p style=" color: white; ">{{cart.count}}</p></a>
+        		
+    	  <div class="dropdown" th:if="${#request.remoteUser}">
+    	  		
+          <a class="user"><img class="user" th:src="@{/img/user.png}" src="/static/img/user.png" ></a> 
+            <div class="dropdown-content">
+              	<th:block th:if="${#request.remoteUser}"> 
+              	<li><a th:href="@{/security/customer}"><img style=" width: 20px; height: 20px; margin-right: 5px; font-size: 12px; font-weight: bold;" th:src="@{/img/setting.png}" src="/static/img/setting.png">[[${#request.remoteUser}]]</a></li>
+        		<li><a   th:href="@{/order/list}" >Lịch Sử Mua Hàng</a></li>
+        		<li th:if="${#request.isUserInRole('DIRE') or #request.isUserInRole('STAF')}">
+        		<a  th:href="@{/admin/index.html#!/product}" >Trang Quản Lý</a></li>
+        		<li><hr class="dropdown-divider"></li>
+        		<li><a  th:href="@{/security/logoff}" >Đăng Xuất</a></li>
+            </div>
+            
+          </div> 
+          <div class="dropdown-nav">
+          		<ul>
+          		<th:block th:unless="${#request.remoteUser}">
+            	<li class="dropdown-nav-clock"><a th:href="@{/security/login/form}"  id="navbarDropdown " role="button" class="user-login">
+            	<i class="fa-solid fa-user" style="color: #fafafa; font-size: 20px"></i></a>
+            	</li>
+       			</th:block>
+       			</ul>
+          </div> 
+    </header>
+	
+	
+	
+	
+	
+	
+</div>

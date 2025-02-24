@@ -1,0 +1,118 @@
+<main>
+	<div id="custom-alert" class="custom-alert"></div>
+	<div class="panel-heading"
+		style="background-color: black; color: white;">Chỉnh Sửa Sản
+		Phẩm</div>
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-sm-4 text-center">
+				<label for="image"> <img
+					ng-src="{{'/images/' + form.image}}"
+					style="max-width: 100%; height: 300px; object-fit: cover;">
+				</label>
+			</div>
+			<div class="col-sm-8">
+				<div class="row-1">
+					<div class="form-group col-sm-5 name">
+						<label for="">Tên Sản Phẩm</label><br> <input
+							ng-model="form.name" class="form-control">
+					</div>
+					<div class="form-group col-sm-3 price">
+						<label for="">Giá Bán</label><br> <input
+							ng-model="form.price" class="form-control"><br>
+					</div>
+					<div class="form-group col-sm-3 price">
+						<label for="">Giá Giảm</label><br> <input
+							ng-model="form.pricesale" class="form-control"><br>
+					</div>
+
+				</div>
+				<div class="row-2">
+					<div class="form-group col-sm-5 image">
+						<label for="">Hình Ảnh</label>
+						<br> <input type="file" class="form-control" id="image"
+							onchange="angular.element(this).scope().imageChanged(this.files)">
+					</div>
+					<div class="form-group col-sm-3 category">
+						<label for="">Danh Mục</label>
+
+						<br> <select ng-model="form.category.id"
+							class="form-group category" style="height: 32px; border:none;">
+							<option ng-repeat="c in cates" ng-value="c.id">{{c.name}}</option>
+						</select>
+					</div>
+					<div class="form-group col-sm-2 ID" style="margin-left: 30px;">
+						<label for="">ID</label><br> <input
+							ng-model="form.id" class="form-control">
+					</div>
+				</div>
+				<div class="row-3">
+					<div class="form-group col-sm-6">
+						<label for="">Ngày nhập</label>
+						<input ng-model="form.createDate" type="date" class="form-control">
+					</div>
+					<div class="form-group col-sm-5">
+						<label for="">Tình Trạng Sản Phẩm</label>
+						<div class="form-control">
+							<label class="radio-inline"> <input
+								ng-model="form.available" ng-value="true" name="available"
+								type="radio">Còn Hàng
+							</label> <label class="radio-inline"> <input
+								ng-model="form.available" ng-value="false" name="available"
+								type="radio">Hết Hàng
+							</label>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="panel-footer text-center editor">
+		<button ng-click="create()" class="btn ">
+			<b class="glyphicon glyphicon-plus"></b>Tạo Mới
+		</button>
+		<button ng-click="update()" class="btn ">
+			<b class="glyphicon glyphicon-save"></b>Cập Nhật
+		</button>
+		<button ng-click="delete(form)" class="btn ">
+			<b class="glyphicon glyphicon-trash"></b>Xóa
+		</button>
+		<button ng-click="reset()" class="btn ">
+			<b class="glyphicon glyphicon-refresh"></b>Cài lại
+		</button>
+	</div>
+<div class="category-saw-box">
+<div class="category-editer">
+ 
+    <div class="category-box">
+        <div class="category-inputer">
+         <h5>Chỉnh Sửa Danh Mục</h5>
+            <label for="editedCategoryId">Id Danh Mục</label>
+            <input ng-model="editedCategory.id" id="editedCategoryId" class="form-editcates">
+            <br>
+            <label for="editedCategoryName">Tên Danh Mục</label>
+            <input ng-model="editedCategory.name" id="editedCategoryName" class="form-editcates">
+        </div>
+        <div class="category-clickedit">
+            <button ng-click="createCategory()"  class='bx bx-plus'>Tạo Mới</button>
+            <button ng-click="updateCategory()" class='bx bx-save'  >Cập Nhật</button>
+            <button ng-click="deleteCategory()" class='bx bxs-trash' >Xóa</button>
+            <button ng-click="resetCategory()" class='bx bx-reset'> Cài lại</button>
+        </div>
+    
+    </div>
+</div>
+
+<div class="category-showall-edit">
+<h5>Danh Mục Hiện Có</h5>
+<div ng-repeat="c in cates" class="category-showall">
+            <input ng-model="c.id" class="form-editcates"  readonly>
+            <input ng-model="c.name" class="form-editcates"  readonly>
+            <button ng-click="editcates(c)" class="las la-wrench"></button>
+        </div>
+
+</div>
+		
+</div>
+</main>

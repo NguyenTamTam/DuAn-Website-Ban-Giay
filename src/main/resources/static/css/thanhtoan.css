@@ -1,0 +1,301 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ 
+}
+
+
+
+.search-content {
+  height: 50px;
+  width: -50%;
+  text-align: center;
+  font-size: 30px;
+
+}
+
+#box {
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+}
+
+.search-content>form>button {
+  background-color: rgb(15, 17, 17);
+  color: rgb(224, 237, 237);
+
+}
+
+.dropdown-container {
+  text-align: center;
+
+}
+
+
+
+/* dropdown */
+
+
+.dropbtn {
+  background-color: #e31b1b;
+  color: rgb(255, 249, 249);
+  width: 80%;
+  height: 60px;
+  padding: 16px;
+  font-size: 20px;
+  border-radius: 20px;
+  border-color: #f2f3f2;
+  cursor: pointer;
+  vertical-align: baseline;
+  text-align: left;
+  min-width: 220px;
+  display: flex !important;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.dropbtn>#icon {
+  text-align: right;
+  transform: rotate(180deg);
+}
+
+.drop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: flex;
+  background-color: #fff;
+  height: auto;
+  border: 1.5px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 4px 4px 3px #0000004c;
+  width: 800px;
+  z-index: 50;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  border-radius:10px ;
+  transform: scale(0);
+  transition: 0.35s;
+}
+
+.dropdown-content img {
+  padding-right: 20px;
+  padding-top: 20px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 16px;
+  object-fit: cover;
+  width: 150px;
+  height: 80px
+}
+
+.tit {
+ display:flex;
+ letter-spacing: 1px;
+ line-height: 30px;
+  text-align: start;
+  padding-right: 50px;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+
+}
+
+.tit li {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding-bottom: 50px;
+}
+
+#box-card img {
+  padding-right: 20px;
+  object-fit: cover;
+  justify-content: center;
+  width: 400PX;
+  height: 150px;
+  text-align: center;
+  display: block;
+  margin: auto;
+}
+
+#box-card {
+
+  width: 100%;
+  height: auto;
+
+  /* border: 1px solid rgb(0, 11, 11);
+  background-color: transparent; */
+
+}
+
+.in1 {
+  width: 300px; 
+  height: 40px; 
+  border-radius: 5px;
+  text-align: start;
+  
+}
+
+.in2 {
+  width: 200px; 
+  height: 40px; 
+  border-radius: 5px;
+
+}
+
+.in3 {
+  width: 300px; 
+  height: 45px ; 
+  border-radius: 5px;
+}
+
+.in4 {
+  width: 100px; 
+  height: 45px ; 
+  border-radius: 5px;
+}
+
+.exit {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #000;
+}
+
+#box-card button {
+  background-color: gray;
+  color: #fff;
+  border: none;
+  width: 25%;
+  height: 45px;
+  float: right;
+  transition: 0.35s;
+  border-radius: 10px;
+}
+
+#box-card button:hover {
+  background: burlywood;
+  color:#000 ;
+}
+
+#box-card .form label {
+  font-weight: 580;
+  font-size: 18px;
+}
+
+/* .dropbtn::before{
+    content: "affsfdafg";
+  }
+   */
+.butt {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.lines {
+  content: "";
+  width: 150px;
+  border: 2px solid #000;
+
+}
+
+.titl h2 {
+	  font-size: 10px;
+}
+
+
+.titl {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  cursor: default;
+
+}
+
+.dropdown-container .l1 {
+  position: absolute;
+  top: 70px;
+  z-index: 99;
+  color: #e9edf1;
+  left: 650px;
+  font-size: 1.2rem;
+
+
+}
+
+.form {
+  text-align: left;
+  padding: 40px;
+  font-size: large;
+}
+
+.dropdown-content img {
+  cursor: pointer;
+}
+
+.show {
+  transform: scale(1);
+}
+
+.gom{
+  border: 3px solid black;
+  border-radius: 5px;
+  background-color: #e9edf1;
+  width: 60%;
+  padding: 10px;
+  
+
+}
+.form-gom{
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200%;
+  
+}
+.show.tit{
+  transform: scale(0);
+}
+
+.bx-left{
+  width: 24%;
+  position:absolute ;
+  left: 0;
+  top: 0;
+ padding: 0 0 0 50px;
+
+}
+
+#box-one{
+  border: 3px solid black;
+  border-radius: 5px;
+  min-height: 780px;
+  width: 80%;
+  padding-right: 50px;
+ 
+}
+#box-one h2{
+  text-align: center;
+ 
+}
+

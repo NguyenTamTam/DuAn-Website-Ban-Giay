@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/index :: dynamic(~{::main})}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<main>
+		<div class="container-feedback" style=" margin-top: 100px; ">
+			<div class="feedback">
+				<h2 class="h2">TRUNG TÂM PHẢN HỒI</h2>
+
+				<p>Chúng tôi luôn luôn hoạt động trên MY SHOES để có thể nghe
+					những phản hồi và đánh giá của bạn để khắc phục và phát triển tốt
+					hơn</p>
+				<h2>Chào mừng [[${#request.remoteUser}]] đến với phản hồi</h2>
+				<div class="bao">
+					<div class="username-left">
+						<p>Họ Tên</p>
+						<input type="text" name="fullname" ng-model="feedback.fullname">
+					</div>
+					<div class="sdt-right">
+						<p>Số điện thoại</p>
+						<input type="tel" name="phone_number" ng-model="feedback.phone_number">
+					</div>
+				</div>
+				<div class="form">
+
+					<p>Email</p>
+					<input type="email" name="email" ng-model="feedback.email">
+					<p>Sản Phẩm Cần Feedback (Có Hoặc Không)</p>
+					<input type="text" name="subject_name" ng-model="feedback.subject_name">
+					<p>Nội Dung</p>
+					<textarea class="textarea" name="pote" ng-model="feedback.note"></textarea>
+					<button type="submit" ng-click="feedback.savefeedback()">Gửi</button>
+
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

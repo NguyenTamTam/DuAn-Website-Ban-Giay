@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product list</title>
+
+</head>
+<body>
+	<main>
+		<div>
+
+			<div class="table-responsive">
+				<table class="product-list-edit">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Tên Sản Phẩm</th>
+							<th>Giá Bán</th>
+							<th>Giá Giảm</th>
+							<th>Ngày Nhập</th>
+							<th>Danh Mục</th>
+							<th>Tình Trạng</th>
+							<th>Thay Đổi</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="item in pager.items">
+							<td>{{item.id}}</td>
+							<td>{{item.name}}</td>
+							<td>{{item.price | number :2}}</td>
+							<td>{{item.pricesale | number :2}}</td>
+							<td>{{item.createDate | date:'dd-MM-yyyy'}}</td>
+							<td>{{item.category.name}}</td>
+							<td>{{item.available?'Còn Hàng':'Hết Hàng'}}</td>
+							<td class="exper0">
+								<div class="exper">
+									<button ng-click="edit(item)" class="las la-wrench"></button>
+									<button ng-click="delete(item)" class="fa fa-trash"></button>
+								</div>
+							</td>
+
+						</tr>
+
+					</tbody>
+
+				</table>
+				<div class="text-center naviga">
+					<button ng-click="pager.first()" class="navigation1">
+						<b class='bx bxs-chevrons-left'></b>
+					</button>
+					<button ng-click="pager.prev()" class="navigation1"
+						style="border: none;">
+						<b class='bx bxs-chevron-left'></b>
+					</button>
+					<button class="">{{pager.page + 1}} OF {{pager.count}}</button>
+					<button ng-click="pager.next()" class="navigation1">
+						<b class='bx bxs-chevron-right'></b>
+					</button>
+					<button ng-click="pager.last()" class="navigation1">
+						<b class='bx bxs-chevrons-right'></b>
+					</button>
+				</div>
+			</div>
+		</div>
+		
+		<section>
+				
+		</section>
+
+	</main>
+</body>
+</html>
+

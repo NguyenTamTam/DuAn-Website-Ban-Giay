@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th=http://www.thymeleaf.org>
+<head>
+<meta charset="UTF-8">
+<title>SHOP BÁN GIÀY SNEAKERS (Dự án nhóm 20)</title>
+<link rel="shortcut icon"  href="/image/icon-shoes.png" type="image/x-icon">
+     <link
+	href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link
+	href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700"
+	rel="stylesheet">
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel='stylesheet prefetch' href='https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css'>
+    <link rel="stylesheet" href="/shoes.css/nav.css">
+    <link rel="stylesheet" href="/shoes.css/footer.css">
+    <link rel="stylesheet" href="/shoes.css/stylee_layout.css">
+    <link rel="stylesheet" href="/shoes.css/quangcao.css">
+</head>
+<body>
+		
+         <div class="wrapper">
+        <div class="menu-controls">
+         <h3>Tìm Theo Thương Hiệu</h3>
+         <div class="search-container">
+		  <form th:action="@{/product/search/form}">
+                <input type="text" name="key" id="srch search-input" placeholder="Nhập từ cần tìm">
+            </form>
+			</div>
+				<ul class="menu">
+
+
+					<li class="menu-item"><input class="menu-control"
+						id="menu-control-item1" name="gmenu-control" type="checkbox">
+						<a for="menu-control-item1" class="menu-label lab"
+						th:each="c:${cates}" th:href="@{|/product/list?cid=${c.id}|}">
+							[[${c.name}]] </a></li>
+
+				</ul>
+			</div>
+			<!--  <div>
+			<form th:action="@{/product/search-price}" method="get">
+				<label >Giá Từ</label>
+				<input type="text" name="minPrice" id="srch" placeholder="Search" class="minPrice">
+				<br>
+				<label >Giá Đến</label>
+				<input type="text" name="maxPrice" id="srch" placeholder="Search" class="maxPrice">
+				<button type="submit" title="Search" >Tìm Kiếm</button>
+				<button ng-click="searchByPrice()">Tìm kiếm2</button>
+<div ></div>
+  				</form>
+			</div>-->
+    </div>
+		
+		
+      
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/index :: dynamic(~{::main})}" >
+
+<body>
+	<main>
+	<div class="container-infomation">
+        <div class="body-setting">
+            <div class="items-title">
+                <h2>Thông Tin Tài Khoản</h2>
+                <p>Home / Tài Khoản</p>
+            </div>
+            <div class="body-Customer">
+
+                <div class="body-left">
+                    <a class="User-photo" th:each="account, state: ${accounts}"><img  th:src="|/images/${account.photo}|"></a>
+                    <a th:href="@{/order/list}"><span>Lịch Sử Giao Dịch</span></a>
+                    <a th:href="@{/security/logoff}"><span>Đăng Xuất</span></a>
+                </div>
+
+                <div class="body-right">
+                    <form th:each="account, state: ${accounts}">
+                        <div class="item-Fullname">
+                            <h5>Tên Tài Khoản</h5>
+                            <input type="text" th:value="${account.username}">
+                        </div>
+                        <div class="item-username">
+                            <h5>Tên Người Dùng</h5>
+                            <input type="text" th:value="${account.fullname}">
+                        </div>
+                        <div class="item-email">
+                            <h5>Email Người Dùng</h5>
+                            <input type="text" th:value="${account.email}">
+                        </div>
+                        <div class="item-phone">
+                            <h5>Phone Người Dùng</h5>
+                            <input type="text" th:value="${account.phone}">
+                        </div>
+                        <div class="item-Adress">
+                            <h5>Địa Chỉ</h5>
+                            <input type="text" th:value="${account.address}">
+                        </div>
+                        
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </main>
+</body>
+</html>

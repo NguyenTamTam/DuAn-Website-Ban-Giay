@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/index :: dynamic(~{::main})}">
+
+
+<body >
+    <main>
+ 
+		<div class=" shopping-cart" th:fragment="shopping-cart" style="width: 100%;">
+			<div class="shopping-shopping">
+				<div class="shopping-heading">
+					<p>GIỎ HÀNG CỦA BẠN</p>
+				</div>
+
+				<table class="shopping-hover">
+					<thead>
+						<tr class="shopping-th">
+							<th>Ảnh Sản Phẩm</th>
+							<th>Tên Sản Phẩm</th>
+							<th>Giá Sản Phẩm</th>
+							<th>Số Lượng</th>
+							<th>Thành Tiền</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="item in cart.items" class="shopping-td">
+							<td><img class="shopping-item" th:src="@{|/images/{{item.image}}|}"></td>
+							<td>{{item.name}}</td>
+							<td>{{item.price | number : 1}} VNĐ</td>
+							<td><input ng-change="cart.saveToLocalStorage()"ng-model="item.qty" type="number" min="1" class="cart-qty" style="width: 94%"></td>
+							<td ng-model="total">{{item.qty*item.price | number : 2}} VNĐ</td>
+							<td class="shopping-delete"><button ng-click="cart.remove(item.id)">
+									<img class="form-icon" th:src="@{/img/close.png}" src="/static/img/close.png"><i class="glyphicon glyphicon-trash"></i>
+								</button></td>
+
+						</tr> 
+					</tbody>
+				</table>
+				<div class="shopping-total">
+					<p>Tổng Tiền: <span ng-model="item.totalPrice" ng-change="cart.saveToLocalStorage()">{{ getTotalPrice()}} VNĐ</span></p>
+					<!-- <p>Tổng Tiền: <span ng-model="item.total_Price" ng-bind="getTotalPrice()"></span> VNĐ</p>-->
+				</div>
+
+				<div class=" shopping-footer">
+
+
+						<button ng-click="cart.check()" class="checkout-thanhtoan">Mua</button>
+					<button ng-click="cart.clear()"
+						class=" shopping-danger">
+						<i class="glyphicon glyphicon-trash"></i><img class="form-icon" th:src="@{/img/recycle-bin.png}" src="/static/img/recycle-bin.png">
+					</button>
+				</div>
+			</div>
+		</div>
+	</main>
+    
+</body>
+
+</html>

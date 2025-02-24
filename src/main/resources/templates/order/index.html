@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<main>
+	<div class="order-management">
+		<h2>Quản Lý Đơn Hàng</h2>
+		<div class="order-management-box">
+			<div class="Display-order-information">
+				<table class="Display-order-information-table">
+					<thead>
+						<tr>
+							<th class="change-color tr2">Mã đơn hàng</th>
+							<th class="change-color tr2">Username</th>
+							<th class="change-color tr2">Tình Trạng Đơn Hàng</th>
+							<th class="change-color tr2">Sản Phẩm Được Đặt</th>
+							<th class="change-color tr2">Cập Nhật</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr class="order-information-list" ng-repeat="order in orders">
+							<td class="tr1">{{order.id}}</td>
+							<td class="tr1">{{order.fullname}}</td>
+						
+								<td class="tr1 change-of-status-activity">
+
+									<select ng-model="order.status.id">
+
+										<option ng-repeat="status in status" ng-value="status.id">
+											{{status.status}}</option>
+									</select>
+
+
+								</td>
+								<td class="tr1">
+									<button onclick="toggleTable()" class="open-table" >Xem</button>
+								</td>
+								<td class="tr1">
+									<button class="open-table" ng-click="update()">Cập Nhật</button>
+								</td>
+						</tr>
+					</tbody>
+				</table>
+				<div id="pagination" class="pagination"></div>
+			</div>
+
+			<div class="hiddden" id="hidddenTable" th:object="${order}">
+				<div id="Tran-information-table">
+					<h2>Thông Tin Đơn Hàng</h2>
+					<table class="Display-order-information-table information-table">
+						<thead>
+							<tr>
+								<th class="change-color1 tr2">Ảnh Sản Phẩm</th>
+								<th class="change-color1 tr2">Tên Sản Phẩm</th>
+								<th class="change-color1 tr2">Giá Sản Phẩm</th>
+								<th class="change-color1 tr2">Số Lượng</th>
+								<th class="change-color1 tr2">Thành Tiền</th>
+
+							</tr>
+						</thead>
+
+						<tbody >
+							<tr class=" information-list-scoll"  >
+								<td class="tr1"><img class="" src="/image/3.png"></td>
+								<td class="tr1 text-dots" >[[*{product.name}]]</td>
+								<td >[[*{#numbers.formatDecimal(price,0,'COMMA',2,'POINT')}]] VNĐ</td>
+								<td>[[*{#numbers.formatDecimal(quantity,0,'COMMA',2,'POINT')}]]</td>
+        						<td>[[*{#numbers.formatDecimal(price*quantity,0,'COMMA',2,'POINT')}]] VNĐ</td>
+								
+        					<td></td>
+        					
+        					
+			
+							</tr>
+						</tbody>
+					</table>
+					<div class="all-money-order">
+						<span>
+							<p> Tổng Giá Trị Đơn Hàng: </p>
+						</span>
+					</div>
+					<div>
+						<button class="esc-list" onclick="hideTable()">Thoát</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</main>
+
+</html>

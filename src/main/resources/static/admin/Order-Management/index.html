@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<main>
+	<div id="custom-alert" class="custom-alert"></div>
+	<div class="order-management" ng-controller="order-management-ctrl">
+		<h2>Quản Lý Đơn Hàng</h2>
+		<div class="order-management-box">
+			<div class="Display-order-information">
+				<table class="Display-order-information-table">
+					<thead>
+						<tr>
+							<th class="change-color tr2">Mã đơn hàng</th>
+							<th class="change-color tr2">Tên Tài Khoản</th>
+							<th class="change-color tr2">Tên Người Dùng</th>
+							<th class="change-color tr2">Tình Trạng Đơn Hàng</th>
+							<th class="change-color tr2">Cập Nhật Tình Trạng</th>
+							<th class="change-color tr2">Cập Nhật</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr class="order-information-list" ng-repeat="order in orders" >
+							<td class="tr1">{{order.id}}</td>
+							<td class="tr1" id="username" style=" width: 120px;">{{order.account.username}}</td>
+							<td class="tr1" id="fullname" style=" width: 150px;">{{order.fullname}}</td>
+							<td class="tr1" style=" width: 150px;"  >{{order.status.status}}</td>
+							<td class="tr1 change-of-status-activity">
+								<select ng-model="order.status" ng-options="status as status.status for status in status">
+									<option ng-repeat="order.statusid in order.statusid" ng-value="order.statusid">{{order.statusid}}</option>
+									<option ng-repeat="status in status" ng-value="status">{{status.status}}</option>
+								</select>
+							</td>
+							
+								<td class="tr1">
+									<button class="open-table" ng-click="updateStatus(order)">Cập Nhật</button>
+								</td>
+						</tr>
+					</tbody>
+				</table>
+				<div id="pagination" class="pagination"></div>
+			</div>
+
+			
+		</div>
+	</div>
+	
+</main>
+
+</html>

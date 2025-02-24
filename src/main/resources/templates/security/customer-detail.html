@@ -1,0 +1,18 @@
+<!-- New Thymeleaf fragment (security/customer-detail.html) -->
+<div th:fragment="details">
+    
+   
+<div class="customer-details">
+        <h2>Customer Details</h2>
+        
+       
+<p th:text="${account.fullname}"></p>
+        
+       
+<p th:text="${account.email}"></p>
+        <p th:text="${account.phone}"></p>
+        <p th:text="${account.address}"></p>
+    
+    </div>
+</div>
+

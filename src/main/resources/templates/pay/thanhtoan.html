@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/index :: dynamic(~{::main})}">
+
+<body>
+<main>
+	<div class="form-gom">
+        <div class="bx-left">
+            <div id="box-one">
+                <h2>Thông tin đơn hàng</h2>
+            </div>
+           
+        </div>
+        <div class="gom">
+
+            <div id="box">
+                <h2 style="text-align: center; ">Phương Thức Thanh Toán</h2>
+
+                <div class="dropdown-container">
+                    <p class="l1">Thông Tin Ngân Hàng</p>
+                    <button class="dropbtn bank ">
+                    </button>
+                    <div class="drop">
+                        <div class="dropdown-content">
+                            <img class="vcb" src="/images/vietcombank.jfif"></img>
+                            <img class="mb" src="/images/tải xuống.png"></img>
+                            <img class="scb" src="/images/logo-sacombank-inkythuatso-fn-10-16-42-08.jpg"></img>
+                            <img class="arb" src="/images/agribank.png"></img>
+                            <img class="shb" src="/images/vnpay1.jpg"></img>
+                        </div>
+
+
+                    </div>
+                    <!-- <a class="tit">
+                        <ul>
+                            <li>Lưu Ý </li>
+                            <p> Vui lòng chọn ngân hàng muốn thanh toán </p>
+                            <p>Chọn ngân hàng và điền thông tin thẻ </p>
+                            <p>Điền thông tin thẻ và đợi mã code gửi về <strong>SIM</strong> </p>
+                        </ul>
+                    </a> -->
+
+
+                </div>
+                <div id="box-card">
+                    <div class="titl">
+                        <h2> Nhập Thông Tin Thẻ</h2>
+                        <div class="lines"></div>
+                    </div>
+
+                    <img src="/images/atm.jpg"></img>
+
+                    <div class="form">
+                        <label>Số Thẻ</label> <br>
+                        <input class="in1" type="phonenumber" placeholder="VD : 0123  456   789">
+
+                        <label for="ngaysinh"> Ngày Hết Hạn</label>
+                        <input class="in2" type="date" name="ngaysinh" id="ngaysinh" value="2003-10-22">
+                        <br>
+                        <label> Tên Tài Khoản </label><br>
+                        <input class="in3" type="text" placeholder="VD : Nguyễn Văn A"></input>
+                        <label> Số CVV :</label>
+                        <input class="in4" type="text" placeholder="VD : 123">
+                        <br>
+
+                        <input type="checkbox" name="love1" id="love3" value="LoveCSS">
+                        <label><i style="font-size: small;">Lưu và bảo mật thông tin cho lần thanh toán
+                                sau</i></label><br>
+
+
+                        <button style="width: 25%;" type="submit">Thanh Toán</button>
+                        <br>
+                        <a class="exit" >Hủy giao dịch</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+	</main>
+</body>
+</html>

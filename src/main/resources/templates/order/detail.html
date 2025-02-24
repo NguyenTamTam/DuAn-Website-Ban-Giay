@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/index :: dynamic(~{::main})}">
+
+
+<body>
+    <main th:object="${order}">
+         <div class="panel panel-primary  checkout-panel">
+        	<div class="panel-heading  checkout-heading  shopping-heading"><p>ĐƠN HÀNG CỦA BẠN</p></div>
+        	<div class="panel-body  checkout-body">
+        		<div class="row row-top" style="margin-top: 10px;">
+        			<div class="form-group col-sm-4" >
+        				<div>Mã Đơn Hàng:</div>
+        				<input th:field="*{id}" class="form-control" readonly>
+        			</div>
+        			<div class="form-group col-sm-4">
+        				<div>Tài Khoản:</div>
+        				<input th:field="*{account.username}" class="form-control" readonly>
+        			</div>
+        			<div class="form-group col-sm-4">
+        				<div>Họ Tên:</div>
+        				<input th:field="*{account.fullname}" class="form-control" readonly>
+        			</div>
+        			<div class="form-group col-sm-4">
+        				<div>Số điện thoại:</div>
+        				<input th:field="*{account.phone}" class="form-control" readonly>
+        			</div>
+        			<div class="form-group col-sm-4">
+        				<div>Ngày Mua:</div>
+        				<input th:field="*{createDate}" class="form-control" readonly>
+        			</div>
+        		</div>
+        		<div class="row">
+        			<div class="form-group col-sm-12  checkout-form2">
+        				<div>Địa chỉ giao hàng:</div>
+        				<textarea th:field="*{address}" class="form-control  note1" readonly></textarea>	
+        			</div>
+        		</div>
+        	</div>
+        	</div>
+        	<div class=" shopping-cart" style="margin-top: -150px;">
+        	<div class=" shopping-shopping">
+        		<div class="shopping-heading"><p>ORDER Lines</p></div>
+        		<table class="shopping-hover">
+        			<thead>
+        				<tr class="shopping-th">
+        					<th>Mã Đơn Hàng</th>    
+        					<th>Mã Sản Phẩm</th>   					
+        					<th>Tên Sản Phẩm </th>
+        					<th>Giá Sản Phẩm</th>
+        					<th>Số Lượng </th>
+        					<th>Tổng Tiền</th>
+        				</tr>
+        			</thead>
+        			<tbody>  
+        				<tr th:each="detail:*{orderDetails}" th:object="${detail}" class="shopping-td">
+        					<td>[[*{order.id}]]</td>
+        					<td>[[*{product.id}]]</td>
+        					<td>[[*{product.name}]]</td>
+        					<td >[[*{#numbers.formatDecimal(price,0,'COMMA',2,'POINT')}]] VNĐ</td>
+        					<td>[[*{#numbers.formatDecimal(quantity,0,'COMMA',2,'POINT')}]]</td>
+        					<td>[[*{#numbers.formatDecimal(price*quantity,0,'COMMA',2,'POINT')}]] VNĐ</td>
+        				</tr>
+        			</tbody>
+        		</table>
+        	</div>
+        	</div>	
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+
+<div xmlns:th=http://www.thymeleaf.org>
+
+    <form
+     th:action="@{/mailer/send}" method="post"  th:each="mail:*{mailinfo}">
+
+        <div>From:</div>
+        <form:input path="from" value="trunghmps21743@fpt.edu.vn"/>
+        <div>To:</div>
+        <form:input path="to" value="trunghmps21743@fpt.edu.vn"/>
+        <div value="dat hang thanh cong">Subject:</div>
+        <form:input path="subject"/>
+        <div>Body:
+        </div>
+        <form:textarea path="body" rows="3" cols="30" value="ban da dat hang thanh cong 
+        dia chi la hcm
+        sdt la 00000"/>
+       
+        <hr/>
+
+        <input type="submit" value="Send" />
+    </form>
+</div>

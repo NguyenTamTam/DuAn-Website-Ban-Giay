@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/index :: dynamic(~{::main})}">
+
+<body>
+    <main>
+        <div class="shopping-cart">
+            <div class="shopping-shopping">
+                <div class="shopping-heading"><p>ĐƠN HÀNG MÀ BẠN ĐÃ MUA</p></div><hr>
+                <table class="shopping-hover">
+                    <thead>
+                        <tr class="shopping-th">
+                            <th>Số Thứ Tự</th>
+                            <th>Mã Đơn Hàng</th>
+                            <th>Ngày Mua Hàng</th>
+                            <th>Địa chỉ Nhận Hàng</th>
+                            <th>Trạng Thái </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="order,state:${orders}" class="shopping-td">
+                            <td>[[${state.index}]]</td>
+                            <td><a th:href="@{|/order/detail/${order.id}|}" style="color: black;">[[${order.id}]]</a></td>
+                            <td>[[${order.createDate}]]</td>
+                            <td>[[${order.address}]]</td>
+                            <td>[[${order.status.status}]]</td>
+                            <td style="display: none;">[[${order.status.id}]]</td>
+							<td th:if="${order.status.id == '1'}">
+    							<form th:action="@{/rest/orders/delete/{id}(id=${order.id})}" th:method="delete" th:onsubmit="'return confirmDelete(' + ${order.id} + ');'">
+        								<input type="hidden" name="_method" value="delete" />
+        								<button type="submit" class="delete-order"><img class="form-icon" th:src="@{/img/close.png}" src="/static/img/close.png"></button>
+    							</form>
+							</td>
+                     		<td>
+                                <a th:href="@{|/order/detail/${order.id}|}" class="btn btn-default">
+                                    <b class="glyphicon glyphicon-search"></b>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+      
+    </main>
+</body>
+
+
+</html>

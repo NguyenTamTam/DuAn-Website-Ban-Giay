@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" ng-app="shopping-cart-app">
+
+ <style>
+        .notification {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            z-index: 1;
+        }
+    </style>
+<body>
+   <div ng-controller="shopping-cart-ctrl">
+        <div class="notification" ng-show="paymentSuccess">
+            Thanh toán thành công!
+        </div>
+    </div>
+ 
+</body>
+
+</html>

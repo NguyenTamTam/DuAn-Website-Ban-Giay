@@ -1,0 +1,213 @@
+#about-head {
+
+    display: flex;
+    align-items: center;
+    padding:50px 10%;
+}
+
+#about-head img {
+    width: 50%;
+    height: 450px;
+    object-fit: cover;
+}
+
+#about-head div {
+    padding-left: 40px;
+}
+
+#about-head div p {
+    text-indent: 20px;
+    letter-spacing: 1px;
+}
+
+#about-head h2 {
+	margin-left:200px;
+	font-weight: 600;
+	align-items: center;
+}
+
+
+#about-body {
+	display: flex;
+	flex-wrap:wrap;
+	align-items: center;
+	padding:50px 10%;
+}
+
+#about-body img{
+	 width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
+#about-body p {
+	padding-top:15px;
+	 text-indent: 20px;
+    letter-spacing: 1px; 
+}
+
+#about-body h3 {
+	padding-bottom: 15px;
+	font-weight: 600;
+	align-items: center;
+}
+/*Thông tin khác hàng*/
+
+.container-customer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 40px 10%;
+    background-color: transparent;
+    flex-wrap: wrap;
+}
+
+.body-setting {
+    padding-top: 100px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.body-Customer {
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding-top: 5% ;
+}
+
+.items-title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.items-title h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.items-title p {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-weight: 500;
+}
+
+.body-Customer .body-left {
+    width: 20%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+.body-left .User-photo img {
+    width: 180px;
+    height: 180px;
+    border-radius: 100%;
+    object-fit: cover;
+ 
+}
+
+.body-left a {
+    text-decoration: none;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    font-size: 18px;
+    font-weight: 400;
+    color: black;
+}
+
+
+
+.body-left .edit {
+    display: flex;
+    width: 180px;
+    padding-top: 20px ;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+    justify-content: center;
+
+}
+
+.body-left .edit button {
+
+    width: 90px;
+    height: 30px;
+    background-color: transparent;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.25s;
+
+}
+
+.body-left .edit:hover button {
+   color: aliceblue;
+   background: black;
+   transform: scale(0.9);
+}
+
+.body-Customer .body-right {
+    width: 80%;
+    padding: 10px 5%;
+}
+
+
+.body-right form {
+    display: flex;
+    flex-wrap: wrap;
+    width: 900px;
+    height: auto;
+   padding: 40px 50px;
+   border-left: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.body-right form div{
+    padding-right: 25px;
+    padding-bottom: 35px;
+}
+
+.body-right form div h5 {
+    font-size: 16px;
+    padding-bottom: 5px;
+    margin-left: 15px;
+}
+
+.body-right form .item-email input,
+.body-right form .item-Fullname input {
+    width: 350px;
+    height: 25px;
+    border-radius: 20px;
+    padding: 20px 30px 20px 20px;
+    color: gray;
+}
+.body-right form .item-phone input,
+.body-right form .item-username input {
+    width: 350px;
+    height: 25px;
+    border-radius: 20px;
+    padding: 20px 30px 20px 20px;
+    color: gray;
+}
+
+
+.body-right form .item-Adress input {
+    width: 725px;
+    height: 25px;
+    border-radius: 20px;
+    padding: 20px 30px 20px 20px;
+    color: gray;
+  
+}
